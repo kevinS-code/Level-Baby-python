@@ -1,5 +1,5 @@
 #temperature.py
-from tkinter import *
+'''from tkinter import *
 from tkinter import ttk
 
 GUI = Tk()
@@ -33,4 +33,5 @@ CB1.pack()
 CL2 = ttk.Label(GUI,textvariable=AllAnswer,font=FONT)
 CL2.pack()
 
-GUI.mainloop()
+GUI.mainloop()'''
+#Don't finished
