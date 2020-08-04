@@ -1,4 +1,4 @@
-#CalcurateProgram.py
+#Project1st.py
 from tkinter import *
 from tkinter import ttk,messagebox
 
@@ -22,19 +22,24 @@ def Multiple():
 	messagebox.showinfo('วิธีคูณ','นี่คือตัวอย่าง 29 * 35= 1015')
 def Divie():
 	messagebox.showinfo('วิธีบวก','นี่คือตัวอย่าง 18 / 6 = 3')
-
+######################Cricle#######################
 def Cricle(): #ถ้าฟังก์ชั้นใช้แล้วจบ ตัวแปรซ้ำได้ไม่มีผล ถ้าฟังก์ชั้นยังไม่จบ จะมีผล
 	x = int(KK.get())
 	sec = Pi * (x ** 2) #สามารถทำแบบนี้ได้เลย sec = 3.14 * (x ** 2) ไม่จำเป็นต้องไปแทนค่าเป็นค่า Pi หรือ ตัดวงเล็บไปก็ได้ผลลัพท์เดิม
 	#sec = Pi * x ** 2 หรือแบบนี้ก็ได้ sec = 3.14 * x ** 2 [** คือ ยกกำลัง]
 	result1.set(f'คำตอบคือ {sec:,.2f}') #:,.xf<--->x คือ จำนวนทศนิยม 
-
+######################Cone#######################
 def Cone():
 	f = float(F.get())
 	h = float(H.get())
 	Ans = 1/3 * f *h
 	SrCone.set(f'คำตอบคือ {Ans:,.2f}')
-
+######################TA#######################
+def TA():
+	f = float(F.get())
+	h = float(H.get())
+	Ans = 1/2 * f * h
+	Answer.set(f'คำตอบคือ: {Ans:,.2f}')
 #######################New File####################################
 def New1File():
 	GUI2 = Tk()
@@ -71,10 +76,12 @@ Tab.pack(fill=BOTH)
 F1 = Frame(Tab)
 F2 = Frame(Tab)
 F3 = Frame(Tab)
+F4 = Frame(Tab)
 
 Tab.add(F1,text='พื้นฐานคำนวณ')
 Tab.add(F2,text='วงกลม')
 Tab.add(F3,text='กรวย')
+Tab.add(F4,text='สามเหลี่ยม')
 
 menubar = Menu(GUI)
 GUI.config(menu=menubar)
@@ -152,5 +159,25 @@ SrConeB1.pack(ipadx=10,ipady=5,padx=3,pady=3)
 
 SwrCone = ttk.Label(F3,textvariable=SrCone,font=FONT)
 SwrCone.pack()
+######################F4#######################
+F = StringVar()
+H = StringVar()
+Answer = StringVar()
+Answer.set('----------')
+
+TAL1 = ttk.Label(F4,text='โปรแกรมคำนวณพื้นที่ สามเหลี่ยม',font=FONT)
+TAL1.pack(pady=50)
+
+TAE1 = ttk.Entry(F4,textvariable=F,font=FONT)
+TAE1.pack(ipadx=10,ipady=5,padx=3,pady=3)
+
+TAE2 = ttk.Entry(F4,textvariable=H,font=FONT)
+TAE2.pack(ipadx=10,ipady=5,padx=3,pady=3)
+
+TAB1 = ttk.Button(F4,text='คำนวณ',command=TA)
+TAB1.pack(ipadx=10,ipady=5,padx=3,pady=3)
+
+TAL2 = ttk.Label(F4,textvariable=Answer,font=FONT)
+TAL2.pack()
 
 GUI.mainloop()
