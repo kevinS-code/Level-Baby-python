@@ -69,4 +69,4 @@ RbsLabel3.pack()
 
 ################################
 
-Rbs.mainloop()
+Rbs.mainloop() #Check 8/6/2020-8:13 PM
