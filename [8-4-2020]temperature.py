@@ -47,4 +47,4 @@ Label_Fahrenheit.pack()
 AllB1 = ttk.Button(GUI,text='คำนวณ',command=All)
 AllB1.pack()
 
-GUI.mainloop()
+GUI.mainloop() #Last update 8/5/2020
