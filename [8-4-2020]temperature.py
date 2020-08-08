@@ -33,30 +33,30 @@ def All():
 	Cal = float(Celsius.get())
 	Kelvin.set((Cal + 273.15 ))
 	Fahrenheit.set((Cal * 1.8) + 32)
-	Allanswer.set(f'คำตอบ: {Kelvin.set():,.2f}')
-	Allanswer1.set(f'คำตอบ: {Fahrenheit.set():,.2f}')
+	Allanswer.set(f'คำตอบ: {Kelvin.set():,.2f}K')
+	Allanswer1.set(f'คำตอบ: {Fahrenheit.set():,.2f}°F')
 
 def KC():
 
 	global Kelvin00
 	global Celsius0
 	global Fahrenheit0
-	Cal1 = float(Kelvin.get())
-	Celsius0.set((Cal1 - 273.15))
+	Cal1 = float(Kelvin0.get())
+	Celsius0.set(Cal1 - 273.15)
 	Fahrenheit0.set((Cal1 * 1.8) - 459.67)
-	KelvinShow.set(f'Ans is: {Celsius.set():,.2f}')
-	KelvinShow1.set(f'Ans is: {Fahrenheit.set():,.2f}')
+	KelvinShow.set(f'Ans is: {Celsius0.set():,.2f}K')
+	KelvinShow1.set(f'Ans is: {Fahrenheit0.set():,.2f}°F')
 
 def FC():
 
 	global Fahrenheit00
 	global Celsius00
 	global Kelvin00
-	Cal2 = float(Fahrenheit.get())
+	Cal2 = float(Fahrenheit00.get())
 	Celsius00.set((Cal2-32) / 1.8)
 	Kelvin00.set((Cal2+459.67) * 5/9)
-	FahrenheitShow.set(f'Ans is: {Celsius.get():,.2f}')
-	FahrenheitShow1.set(f'Ans is: {Kelvin.set():,.2f}')
+	FahrenheitShow.set(f'Ans is: {Celsius00.get():,.2f}°C')
+	FahrenheitShow1.set(f'Ans is: {Kelvin00.set():,.2f}K')
 
 ################################
 ############Variable############
@@ -113,7 +113,7 @@ CelsiusResult1.pack()
 KelvinLabel = ttk.Label(F2,text='K to °C and °F')
 KelvinLabel.pack()
 
-Entry_Kelvin = ttk.Entry(F2,textvariable=Kelvin,font=FONT)
+Entry_Kelvin = ttk.Entry(F2,textvariable=Kelvin0,font=FONT)
 Entry_Kelvin.pack()
 
 Label_Celsius = ttk.Label(F2,textvariable=Celsius0,font=FONT)
@@ -135,7 +135,7 @@ KelvinResult1.pack()
 FahrenheitLabel = ttk.Label(F3,text='°F to °C and K')
 FahrenheitLabel.pack()
 
-Entry_Fahrenheit = ttk.Entry(F3,textvariable=Fahrenheit,font=FONT)
+Entry_Fahrenheit = ttk.Entry(F3,textvariable=Fahrenheit00,font=FONT)
 Entry_Fahrenheit.pack()
 
 Label_Celsius1 = ttk.Label(F3,textvariable=Celsius00,font=FONT)
@@ -150,8 +150,7 @@ FCM.pack()
 FahrenheitResult = ttk.Label(F3,textvariable=FahrenheitShow,font=FONT)
 FahrenheitResult.pack()
 
-
 FahrenheitResult1 = ttk.Label(F3,textvariable=FahrenheitShow1,font=FONT)
 FahrenheitResult1.pack()
 ##################################
-GUI.mainloop() #Last update 8/8/2020-7:33 PM Unfinished
+GUI.mainloop() #Last update 8/8/2020-7:58 PM Unfinished
