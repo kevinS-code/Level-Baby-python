@@ -34,7 +34,9 @@ def All():
 	Kelvin.set((Cal + 273.15 ))
 	Fahrenheit.set((Cal * 1.8) + 32)
 	Allanswer.set(f'คำตอบ: {Kelvin.set():,.2f}K')
+	Allanswer.place(x=200,y=150)
 	Allanswer1.set(f'คำตอบ: {Fahrenheit.set():,.2f}°F')
+	Allanswer1.place(x=200,y=150)
 
 def KC():
 
@@ -45,7 +47,9 @@ def KC():
 	Celsius0.set(Cal1 - 273.15)
 	Fahrenheit0.set((Cal1 * 1.8) - 459.67)
 	KelvinShow.set(f'Ans is: {Celsius0.set():,.2f}K')
+	KelvinShow.place(x=200,y=150)
 	KelvinShow1.set(f'Ans is: {Fahrenheit0.set():,.2f}°F')
+	KelvinShow1.place(x=200,y=150)
 
 def FC():
 
@@ -56,7 +60,9 @@ def FC():
 	Celsius00.set((Cal2-32) / 1.8)
 	Kelvin00.set((Cal2+459.67) * 5/9)
 	FahrenheitShow.set(f'Ans is: {Celsius00.get():,.2f}°C')
+	FahrenheitShow.place(x=200,y=150)
 	FahrenheitShow1.set(f'Ans is: {Kelvin00.set():,.2f}K')
+	FahrenheitShow1.place(x=200,y=150)
 
 ################################
 ############Variable############
@@ -103,14 +109,9 @@ Label_Fahrenheit.pack()
 AllB1 = ttk.Button(F1,text='คำนวณ',command=All)
 AllB1.pack()
 
-CelsiusResult = ttk.Label(F1,textvariable=Allanswer,font=FONT)
-CelsiusResult.pack()
-
-CelsiusResult1 = ttk.Label(F1,textvariable=Allanswer1,font=FONT)
-CelsiusResult1.pack()
 ##################################
 ###########Widget Kelvin##########
-KelvinLabel = ttk.Label(F2,text='K to °C and °F')
+KelvinLabel = ttk.Label(F2,text='K to °C and °F',font=FONT)
 KelvinLabel.pack()
 
 Entry_Kelvin = ttk.Entry(F2,textvariable=Kelvin0,font=FONT)
@@ -119,20 +120,15 @@ Entry_Kelvin.pack()
 Label_Celsius = ttk.Label(F2,textvariable=Celsius0,font=FONT)
 Label_Celsius.pack()
 
-Label_Fahrenheit1 = ttk.Label(GUI,textvariable=Fahrenheit0,font=FONT)
+Label_Fahrenheit1 = ttk.Label(F2,textvariable=Fahrenheit0,font=FONT)
 Label_Fahrenheit1.pack()
 
 KCM = ttk.Button(F2,text='Calculate',command=KC)
 KCM.pack()
 
-KelvinResult = ttk.Label(F2,textvariable=KelvinShow,font=FONT)
-KelvinResult.pack()
-
-KelvinResult1 = ttk.Label(F2,textvariable=KelvinShow1,font=FONT)
-KelvinResult1.pack()
 ##################################
 ###########Widget Fahrenheit######
-FahrenheitLabel = ttk.Label(F3,text='°F to °C and K')
+FahrenheitLabel = ttk.Label(F3,text='°F to °C and K',font=FONT)
 FahrenheitLabel.pack()
 
 Entry_Fahrenheit = ttk.Entry(F3,textvariable=Fahrenheit00,font=FONT)
@@ -147,10 +143,5 @@ Label_Kelvin1.pack()
 FCM = ttk.Button(F3,text='Calculatel',command=FC)
 FCM.pack()
 
-FahrenheitResult = ttk.Label(F3,textvariable=FahrenheitShow,font=FONT)
-FahrenheitResult.pack()
-
-FahrenheitResult1 = ttk.Label(F3,textvariable=FahrenheitShow1,font=FONT)
-FahrenheitResult1.pack()
 ##################################
-GUI.mainloop() #Last update 8/8/2020-7:58 PM Unfinished
+GUI.mainloop() #Last update 8/9/2020-9:16 AM Unfinished #ปัญหาส่วนแรก Line 123 เปลี่ยน GUI เป็น F2 จะลองดูต่อว่าถ้าลบตัวแปรที่เพิ่มมาจะยังมีผลไหม
