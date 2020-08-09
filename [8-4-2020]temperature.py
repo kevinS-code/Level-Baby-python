@@ -2,16 +2,6 @@
 from tkinter import *
 from tkinter import ttk
 
-Celsius = None
-Kelvin = None
-Fahrenheit = None
-Celsius0 = None
-Kelvin00 = None
-Fahrenheit0 = None
-Celsius00 = None
-Kelvin00 = None
-Fahrenheit00 = None
-
 ############Screen##############
 GUI = Tk()
 GUI.geometry('500x500')
@@ -27,9 +17,7 @@ Tab.add(F3,text='°F')
 ############Function############
 def All():
 
-	global Celsius
-	global Kelvin
-	global Fahrenheit
+	
 	Cal = float(Celsius.get())
 	Kelvin.set((Cal + 273.15 ))
 	Fahrenheit.set((Cal * 1.8) + 32)
@@ -40,28 +28,24 @@ def All():
 
 def KC():
 
-	global Kelvin00
-	global Celsius0
-	global Fahrenheit0
-	Cal1 = float(Kelvin0.get())
-	Celsius0.set(Cal1 - 273.15)
-	Fahrenheit0.set((Cal1 * 1.8) - 459.67)
-	KelvinShow.set(f'Ans is: {Celsius0.set():,.2f}K')
+
+	Cal1 = float(Kelvin.get())
+	Celsius.set(Cal1 - 273.15)
+	Fahrenheit.set((Cal1 * 1.8) - 459.67)
+	KelvinShow.set(f'Ans is: {Celsius.set():,.2f}K')
 	KelvinShow.place(x=200,y=150)
-	KelvinShow1.set(f'Ans is: {Fahrenheit0.set():,.2f}°F')
+	KelvinShow1.set(f'Ans is: {Fahrenheit.set():,.2f}°F')
 	KelvinShow1.place(x=200,y=150)
 
 def FC():
 
-	global Fahrenheit00
-	global Celsius00
-	global Kelvin00
-	Cal2 = float(Fahrenheit00.get())
-	Celsius00.set((Cal2-32) / 1.8)
-	Kelvin00.set((Cal2+459.67) * 5/9)
-	FahrenheitShow.set(f'Ans is: {Celsius00.get():,.2f}°C')
+	
+	Cal2 = float(Fahrenheit.get())
+	Celsius.set((Cal2-32) / 1.8)
+	Kelvin.set((Cal2+459.67) * 5/9)
+	FahrenheitShow.set(f'Ans is: {Celsius.get():,.2f}°C')
 	FahrenheitShow.place(x=200,y=150)
-	FahrenheitShow1.set(f'Ans is: {Kelvin00.set():,.2f}K')
+	FahrenheitShow1.set(f'Ans is: {Kelvin.set():,.2f}K')
 	FahrenheitShow1.place(x=200,y=150)
 
 ################################
@@ -71,14 +55,6 @@ Celsius = StringVar()
 Kelvin = StringVar()
 Fahrenheit = StringVar()
 ########ALL###########
-Celsius0 = StringVar()
-Kelvin0 = StringVar()
-Fahrenheit0 = StringVar()
-#######KC#############
-Celsius00 = StringVar()
-Kelvin00 = StringVar()
-Fahrenheit00 = StringVar()
-########FC############
 Allanswer = StringVar()
 Allanswer.set('----------')
 Allanswer1 = StringVar()
@@ -94,7 +70,7 @@ FahrenheitShow.set('-----------')
 FahrenheitShow1 = StringVar()
 FahrenheitShow1.set('-----------')
 ###########Widget Celsius##########
-CelsiusLable = ttk.Label(F1,text='โปรแกรมแปลงค่าอุณหภูมิ',font=FONT)
+CelsiusLable = ttk.Label(F1,text='โปรแกรมแปลงค่าอุณหภูมิ °C to K and °F',font=FONT)
 CelsiusLable.pack()
 
 Entry_Celsius = ttk.Entry(F1,textvariable=Celsius,font=FONT)
@@ -106,7 +82,7 @@ Label_Kelvin.pack()
 Label_Fahrenheit = ttk.Label(F1,textvariable=Fahrenheit,font=FONT)
 Label_Fahrenheit.pack()
 
-AllB1 = ttk.Button(F1,text='คำนวณ',command=All)
+AllB1 = ttk.Button(F1,text='คำนวณ',command=All) #คำนวณ ภาษาอังกฤษคือคำว่า Calculate
 AllB1.pack()
 
 ##################################
@@ -114,13 +90,13 @@ AllB1.pack()
 KelvinLabel = ttk.Label(F2,text='K to °C and °F',font=FONT)
 KelvinLabel.pack()
 
-Entry_Kelvin = ttk.Entry(F2,textvariable=Kelvin0,font=FONT)
+Entry_Kelvin = ttk.Entry(F2,textvariable=Kelvin,font=FONT)
 Entry_Kelvin.pack()
 
-Label_Celsius = ttk.Label(F2,textvariable=Celsius0,font=FONT)
+Label_Celsius = ttk.Label(F2,textvariable=Celsius,font=FONT)
 Label_Celsius.pack()
 
-Label_Fahrenheit1 = ttk.Label(F2,textvariable=Fahrenheit0,font=FONT)
+Label_Fahrenheit1 = ttk.Label(F2,textvariable=Fahrenheit,font=FONT)
 Label_Fahrenheit1.pack()
 
 KCM = ttk.Button(F2,text='Calculate',command=KC)
@@ -131,17 +107,26 @@ KCM.pack()
 FahrenheitLabel = ttk.Label(F3,text='°F to °C and K',font=FONT)
 FahrenheitLabel.pack()
 
-Entry_Fahrenheit = ttk.Entry(F3,textvariable=Fahrenheit00,font=FONT)
+Entry_Fahrenheit = ttk.Entry(F3,textvariable=Fahrenheit,font=FONT)
 Entry_Fahrenheit.pack()
 
-Label_Celsius1 = ttk.Label(F3,textvariable=Celsius00,font=FONT)
+Label_Celsius1 = ttk.Label(F3,textvariable=Celsius,font=FONT)
 Label_Celsius1.pack()
 
-Label_Kelvin1 = ttk.Label(F3,textvariable=Kelvin00,font=FONT)
+Label_Kelvin1 = ttk.Label(F3,textvariable=Kelvin,font=FONT)
 Label_Kelvin1.pack()
 
-FCM = ttk.Button(F3,text='Calculatel',command=FC)
+FCM = ttk.Button(F3,text='Calculate',command=FC)
 FCM.pack()
 
 ##################################
-GUI.mainloop() #Last update 8/9/2020-9:16 AM Unfinished #ปัญหาส่วนแรก Line 123 เปลี่ยน GUI เป็น F2 จะลองดูต่อว่าถ้าลบตัวแปรที่เพิ่มมาจะยังมีผลไหม
+#Last update 8/9/2020-9:16 AM Unfinished 
+#ปัญหาส่วนแรก Line 123 เปลี่ยน GUI เป็น F2 จะลองดูต่อว่าถ้าลบตัวแปรที่เพิ่มมาจะยังมีผลไหม Update 8/9/2020-9:26 AM [มั่วเอาลืมดูเวลาตอนแก้ปัญหานี้เสร็จ]
+#ลบตัวแปร 0 กับ 00 ออกมีผลให้ frame อื่นมีคำตอบ ของหน้า celsius(F1) ไปอยู่ใน Entry F2,F3 เพราะใช้ตัวแปรเดียวกัน 
+#ต่อจากข้างบน- แต่ผลลัพธ์แบบนี้ก็ได้เพราะใส่่ค่า Celsius ใน F1 ก็จะได้คำตอบแต่ ใน F2,F3 ก็จะมีคำตอบใน F1 ไปโผล่ในช่อง Entry ของ F2,F3 แล้วก็จะโชว์ค่า K,°F,°C พร้อม ถ้าต้องการแบบนี้ก็ได้ 
+#ต่อจากข้างบน-แต่ระบบตอนนี้จะฟ้องว่า TypeError: set() missing 1 required positional argument: 'value' ซึ่งตอนที่ทำอยู่นี้ยังหาวิธีแก้ไม่ได้ Update 8/9/2020-9:37 AM
+#ปัญหาส่วนที่สอง คัวแปรเหมือนกันทำให้ คำตอบในแต่ละ frame เชื่อมถึงกัน จะลองใช้วิธีแก้ปัญหา 2 วิธี คือ
+#1 จะลองเพิ่มตัวแปรเหมือนเดิม
+#2 จะลองลบ global ดู ผลลัพธ์ ลบตัวแปร global ออกทั้งหมด ไม่มีผลกับการทำงานของโปรแกรม แต่ยังมีปัญหาเรื่อง ที่อยู่หรือตำแหน่งของค่า 'value'  Update 8/9/2020-9:53 AM
+##################################
+GUI.mainloop() 
