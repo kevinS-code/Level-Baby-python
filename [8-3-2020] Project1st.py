@@ -51,6 +51,11 @@ def RbsFV_2():
 	Fill_inPODL = float(Product_of_diagonal_length.get())
 	Cal1 = 1/2 * Fill_inPODL
 	ResultRbs1.set(f'Result is: {Cal1:,.2f}')
+#################################################
+def CC():
+	C = float(Cube.get())
+	Ans = C**3
+	CubeShowResalut.set(f'Answer is: {Ans:,.2f}')
 #######################New File####################################
 def New1File():
 	GUI2 = Tk()
@@ -90,6 +95,7 @@ F3 = Frame(Tab) #(Date:8/3/2020)
 F4 = Frame(Tab)
 F5 = Frame(Tab)
 F6 = Frame(Tab)
+F7 = Frame(Tab)
 
 Tab.add(F1,text='พื้นฐานคำนวณ')
 Tab.add(F2,text='วงกลม')
@@ -97,6 +103,7 @@ Tab.add(F3,text='กรวย') #(Date:8/3/2020)
 Tab.add(F4,text='สามเหลี่ยม')
 Tab.add(F5,text='สี่เหลี่ยมขนมเปียกปูน')
 Tab.add(F6,text='สี่เหลี่ยมขนมเปียกปูนV_2')
+Tab.add(F7,text='ลูกบาศก์')
 
 menubar = Menu(GUI)
 GUI.config(menu=menubar)
@@ -230,6 +237,21 @@ RbsButton1.pack()
 RbsLabel3 = ttk.Label(F6,textvariable=ResultRbs1,font=FONT)
 RbsLabel3.pack()
 
-###############################################
+#####################F7########################
+Cube = StringVar()
+CubeShowResalut = StringVar()
+CubeShowResalut.set('----------')
+########################
+CubeLabel = ttk.Label(F7,text='Calculate of Cube')
+CubeLabel.pack()
 
-GUI.mainloop() #Last update 8/6/2020-6:56PM
+CubeEntry = ttk.Entry(F7,textvariable=Cube,font=FONT)
+CubeEntry.pack()
+
+CubeButton = ttk.Button(F7,text='Calculate',command=CC)
+CubeButton.pack()
+
+CubeLabel1 = ttk.Label(F7,textvariable=CubeShowResalut,font=FONT)
+CubeLabel1.pack()
+###############################################
+GUI.mainloop() #Last update 8/10/2020-4:24PM
