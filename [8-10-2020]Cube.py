@@ -17,7 +17,7 @@ Cube = StringVar()
 CubeShowResalut = StringVar()
 CubeShowResalut.set('----------')
 ########################
-CubeLabel = ttk.Label(GUI,text='Calculate of Cube')
+CubeLabel = ttk.Label(GUI,text='Calculate of Cube',font=FONT)
 CubeLabel.pack()
 
 CubeEntry = ttk.Entry(GUI,textvariable=Cube,font=FONT)
