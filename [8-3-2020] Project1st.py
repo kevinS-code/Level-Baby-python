@@ -242,7 +242,7 @@ Cube = StringVar()
 CubeShowResalut = StringVar()
 CubeShowResalut.set('----------')
 ########################
-CubeLabel = ttk.Label(F7,text='Calculate of Cube')
+CubeLabel = ttk.Label(F7,text='Calculate of Cube',font=FONT)
 CubeLabel.pack()
 
 CubeEntry = ttk.Entry(F7,textvariable=Cube,font=FONT)
