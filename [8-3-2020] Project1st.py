@@ -56,6 +56,11 @@ def CC():
 	C = float(Cube.get())
 	Ans = C**3
 	CubeShowResalut.set(f'Answer is: {Ans:,.2f}')
+#################################################
+def CS():
+	S = float(Spherical.get())
+	Ans = 4/3*3.14*S**3
+	SphericalShowResalut.set(f'Answer is: {Ans:,.2f}')
 #######################New File####################################
 def New1File():
 	GUI2 = Tk()
@@ -96,6 +101,7 @@ F4 = Frame(Tab)
 F5 = Frame(Tab)
 F6 = Frame(Tab)
 F7 = Frame(Tab)
+F8 = Frame(Tab)
 
 Tab.add(F1,text='พื้นฐานคำนวณ')
 Tab.add(F2,text='วงกลม')
@@ -104,6 +110,7 @@ Tab.add(F4,text='สามเหลี่ยม')
 Tab.add(F5,text='สี่เหลี่ยมขนมเปียกปูน')
 Tab.add(F6,text='สี่เหลี่ยมขนมเปียกปูนV_2')
 Tab.add(F7,text='ลูกบาศก์')
+Tab.add(F8,text='ทรงกลม')
 
 menubar = Menu(GUI)
 GUI.config(menu=menubar)
@@ -242,7 +249,7 @@ Cube = StringVar()
 CubeShowResalut = StringVar()
 CubeShowResalut.set('----------')
 ########################
-CubeLabel = ttk.Label(F7,text='Calculate of Cube',font=FONT)
+CubeLabel = ttk.Label(F7,text='Calculate of Cube')
 CubeLabel.pack()
 
 CubeEntry = ttk.Entry(F7,textvariable=Cube,font=FONT)
@@ -254,4 +261,20 @@ CubeButton.pack()
 CubeLabel1 = ttk.Label(F7,textvariable=CubeShowResalut,font=FONT)
 CubeLabel1.pack()
 ###############################################
-GUI.mainloop() #Last update 8/10/2020-4:24PM
+Spherical = StringVar()
+SphericalShowResalut = StringVar()
+SphericalShowResalut.set('----------')
+########################
+SphericalLabel = ttk.Label(F8,text='Calculate of Spherical')
+SphericalLabel.pack()
+
+SphericalEntry = ttk.Entry(F8,textvariable=Spherical,font=FONT)
+SphericalEntry.pack()
+
+SphericalButton = ttk.Button(F8,text='Calculate',command=CS)
+SphericalButton.pack()
+
+SphericalLabel1 = ttk.Label(F8,textvariable=SphericalShowResalut,font=FONT)
+SphericalLabel1.pack()
+###############################################
+GUI.mainloop() #Last update 8/11/2020-6:52PM
