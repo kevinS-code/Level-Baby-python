@@ -28,12 +28,12 @@ def Cricle(): #ถ้าฟังก์ชั้นใช้แล้วจบ �
 	sec = Pi * (x ** 2) #สามารถทำแบบนี้ได้เลย sec = 3.14 * (x ** 2) ไม่จำเป็นต้องไปแทนค่าเป็นค่า Pi หรือ ตัดวงเล็บไปก็ได้ผลลัพท์เดิม
 	#sec = Pi * x ** 2 หรือแบบนี้ก็ได้ sec = 3.14 * x ** 2 [** คือ ยกกำลัง]
 	result1.set(f'คำตอบคือ {sec:,.2f}') #:,.xf<--->x คือ จำนวนทศนิยม 
-######################Cone#######################(Date:8/3/2020)
-def Cone():
+######################Funnel#######################(Date:8/12/2020 10:54 AM)
+def Funnel():
 	f = float(F.get())
 	h = float(H.get())
 	Ans = 1/3 * f *h
-	SrCone.set(f'คำตอบคือ {Ans:,.2f}')
+	SrFunnel.set(f'คำตอบคือ {Ans:,.2f}')
 ######################TA#########################
 def TA():
 	f = float(F.get())
@@ -61,6 +61,12 @@ def CS():
 	S = float(Spherical.get())
 	Ans = 4/3*3.14*S**3
 	SphericalShowResalut.set(f'Answer is: {Ans:,.2f}')
+#################################################
+def CCY():
+	CYR = float(CylinderRadius.get())
+	CYH = float(CylinderHight.get())
+	Ans =(3.14*CYR**2)*CYH
+	CylinderShowResalut.set(f'Answer is: {Ans:,.2f}')
 #######################New File####################################
 def New1File():
 	GUI2 = Tk()
@@ -88,7 +94,7 @@ def New1File():
 GUI = Tk() #GUI เป็กการตั้งชื่อ เพื่อที่จะใช้ Tk()  
 
 GUI.title('CalcurateProgram')
-GUI.geometry('500x500')
+GUI.geometry('1000x500')
 
 
 Tab = ttk.Notebook(GUI)
@@ -102,6 +108,7 @@ F5 = Frame(Tab)
 F6 = Frame(Tab)
 F7 = Frame(Tab)
 F8 = Frame(Tab)
+F9 = Frame(Tab)
 
 Tab.add(F1,text='พื้นฐานคำนวณ')
 Tab.add(F2,text='วงกลม')
@@ -111,6 +118,7 @@ Tab.add(F5,text='สี่เหลี่ยมขนมเปียกปูน
 Tab.add(F6,text='สี่เหลี่ยมขนมเปียกปูนV_2')
 Tab.add(F7,text='ลูกบาศก์')
 Tab.add(F8,text='ทรงกลม')
+Tab.add(F9,text='ทรงกระบอก')
 
 menubar = Menu(GUI)
 GUI.config(menu=menubar)
@@ -169,23 +177,23 @@ RResult.pack()
 ######################F3#######################
 F = StringVar()
 H = StringVar()
-SrCone = StringVar()
-SrCone.set('//////////////')
+SrFunnel = StringVar()
+SrFunnel.set('//////////////')
 
-SrConeL1 = ttk.Label(F3,text='โปรแกรมคำนวณปริมาตรทรงกรวย',font=FONT)
-SrConeL1.pack(pady=50)
+SrFunnelL1 = ttk.Label(F3,text='โปรแกรมคำนวณปริมาตรทรงกรวย',font=FONT)
+SrFunnelL1.pack(pady=50)
 
-SrConeE1 = ttk.Entry(F3,textvariable=F,font=FONT)
-SrConeE1.pack(ipadx=10,ipady=5,padx=3,pady=3)
+SrFunnelE1 = ttk.Entry(F3,textvariable=F,font=FONT)
+SrFunnelE1.pack(ipadx=10,ipady=5,padx=3,pady=3)
 
-SrConeE2 = ttk.Entry(F3,textvariable=H,font=FONT)
-SrConeE2.pack(ipadx=10,ipady=5,padx=3,pady=3)
+SrFunnelE2 = ttk.Entry(F3,textvariable=H,font=FONT)
+SrFunnelE2.pack(ipadx=10,ipady=5,padx=3,pady=3)
 
-SrConeB1 = ttk.Button(F3,text='คำนวณ',command=Cone)
-SrConeB1.pack(ipadx=10,ipady=5,padx=3,pady=3)
+SrFunnelB1 = ttk.Button(F3,text='คำนวณ',command=Funnel)
+SrFunnelB1.pack(ipadx=10,ipady=5,padx=3,pady=3)
 
-SwrCone = ttk.Label(F3,textvariable=SrCone,font=FONT)
-SwrCone.pack()#Date(8/3/2020)
+SwrFunnel = ttk.Label(F3,textvariable=SrFunnel,font=FONT)
+SwrFunnel.pack()#Date(8/3/2020)
 ######################F4#######################
 F = StringVar()
 H = StringVar()
@@ -265,7 +273,7 @@ Spherical = StringVar()
 SphericalShowResalut = StringVar()
 SphericalShowResalut.set('----------')
 ########################
-SphericalLabel = ttk.Label(F8,text='Calculate of Spherical')
+SphericalLabel = ttk.Label(F8,text='Calculate of Spherical',font=FONT)
 SphericalLabel.pack()
 
 SphericalEntry = ttk.Entry(F8,textvariable=Spherical,font=FONT)
@@ -277,4 +285,24 @@ SphericalButton.pack()
 SphericalLabel1 = ttk.Label(F8,textvariable=SphericalShowResalut,font=FONT)
 SphericalLabel1.pack()
 ###############################################
-GUI.mainloop() #Last update 8/11/2020-6:52PM
+CylinderRadius = StringVar()
+CylinderHight = StringVar()
+CylinderShowResalut = StringVar()
+CylinderShowResalut.set('----------')
+########################
+CylinderLabel = ttk.Label(F9,text='Calculate of Cylinder',font=FONT)
+CylinderLabel.pack()
+
+CylinderEntry = ttk.Entry(F9,textvariable=CylinderRadius,font=FONT)
+CylinderEntry.pack()
+
+CylinderEntryH = ttk.Entry(F9,textvariable=CylinderHight,font=FONT)
+CylinderEntryH.pack()
+
+CylinderButton = ttk.Button(F9,text='Calculate',command=CCY)
+CylinderButton.pack()
+
+CylinderLabel1 = ttk.Label(F9,textvariable=CylinderShowResalut,font=FONT)
+CylinderLabel1.pack()
+###############################################
+GUI.mainloop() #Last update 8/12/2020-10:58 AM
