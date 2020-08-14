@@ -67,6 +67,12 @@ def CCY():
 	CYH = float(CylinderHight.get())
 	Ans =(3.14*CYR**2)*CYH
 	CylinderShowResalut.set(f'Answer is: {Ans:,.2f}')
+#################################################
+def CCO():
+	COR = float(ConicalRadius.get())
+	COH = float(ConicalHight.get())
+	Ans = 1/3*3.14*COR**2*COH
+	ConicalShowResalut.set(f'Answer is: {Ans:,.2f}')
 #######################New File####################################
 def New1File():
 	GUI2 = Tk()
@@ -109,6 +115,7 @@ F6 = Frame(Tab)
 F7 = Frame(Tab)
 F8 = Frame(Tab)
 F9 = Frame(Tab)
+F10 = Frame(Tab)
 
 Tab.add(F1,text='พื้นฐานคำนวณ')
 Tab.add(F2,text='วงกลม')
@@ -119,6 +126,7 @@ Tab.add(F6,text='สี่เหลี่ยมขนมเปียกปูน
 Tab.add(F7,text='ลูกบาศก์')
 Tab.add(F8,text='ทรงกลม')
 Tab.add(F9,text='ทรงกระบอก')
+Tab.add(F10,text='ทรงกรวย')
 
 menubar = Menu(GUI)
 GUI.config(menu=menubar)
@@ -268,7 +276,7 @@ CubeButton.pack()
 
 CubeLabel1 = ttk.Label(F7,textvariable=CubeShowResalut,font=FONT)
 CubeLabel1.pack()
-###############################################
+###################F8##########################
 Spherical = StringVar()
 SphericalShowResalut = StringVar()
 SphericalShowResalut.set('----------')
@@ -284,7 +292,7 @@ SphericalButton.pack()
 
 SphericalLabel1 = ttk.Label(F8,textvariable=SphericalShowResalut,font=FONT)
 SphericalLabel1.pack()
-###############################################
+###################F9##########################
 CylinderRadius = StringVar()
 CylinderHight = StringVar()
 CylinderShowResalut = StringVar()
@@ -304,5 +312,25 @@ CylinderButton.pack()
 
 CylinderLabel1 = ttk.Label(F9,textvariable=CylinderShowResalut,font=FONT)
 CylinderLabel1.pack()
+##################F10###########################
+ConicalRadius = StringVar()
+ConicalHight = StringVar()
+ConicalShowResalut = StringVar()
+ConicalShowResalut.set('----------')
+########################
+ConicalLabel = ttk.Label(F10,text='Calculate of Conical')
+ConicalLabel.pack()
+
+ConicalEntry = ttk.Entry(F10,textvariable=ConicalRadius,font=FONT)
+ConicalEntry.pack()
+
+ConicalEntryH = ttk.Entry(F10,textvariable=ConicalHight,font=FONT)
+ConicalEntryH.pack()
+
+ConicalButton = ttk.Button(F10,text='Calculate',command=CCO)
+ConicalButton.pack()
+
+ConicalLabel1 = ttk.Label(F10,textvariable=ConicalShowResalut,font=FONT)
+ConicalLabel1.pack()
 ###############################################
-GUI.mainloop() #Last update 8/12/2020-10:58 AM
+GUI.mainloop() #Last update 8/14/2020-7:23 PM
