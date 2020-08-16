@@ -73,6 +73,13 @@ def CCO():
 	COH = float(ConicalHight.get())
 	Ans = 1/3*3.14*COR**2*COH
 	ConicalShowResalut.set(f'Answer is: {Ans:,.2f}')
+#################################################
+def CP():
+	PB = float(pyramidBase.get())
+	PH = float(pyramidHight.get())
+	PS = float(pyramidSide.get())
+	Ans = 1/3*PB*PH*PS**2
+	pyramidShowResalut.set(f'Answer is: {Ans:,.2f}')
 #######################New File####################################
 def New1File():
 	GUI2 = Tk()
@@ -116,6 +123,7 @@ F7 = Frame(Tab)
 F8 = Frame(Tab)
 F9 = Frame(Tab)
 F10 = Frame(Tab)
+F11 = Frame(Tab)
 
 Tab.add(F1,text='พื้นฐานคำนวณ')
 Tab.add(F2,text='วงกลม')
@@ -127,6 +135,7 @@ Tab.add(F7,text='ลูกบาศก์')
 Tab.add(F8,text='ทรงกลม')
 Tab.add(F9,text='ทรงกระบอก')
 Tab.add(F10,text='ทรงกรวย')
+Tab.add(F11,text='พีระมิด')
 
 menubar = Menu(GUI)
 GUI.config(menu=menubar)
@@ -333,4 +342,29 @@ ConicalButton.pack()
 ConicalLabel1 = ttk.Label(F10,textvariable=ConicalShowResalut,font=FONT)
 ConicalLabel1.pack()
 ###############################################
-GUI.mainloop() #Last update 8/14/2020-7:23 PM
+###################F11##########################
+pyramidBase = StringVar()
+pyramidHight = StringVar()
+pyramidSide = StringVar()
+pyramidShowResalut = StringVar()
+pyramidShowResalut.set('----------')
+########################
+pyramidLabel = ttk.Label(F11,text='Calculate of pyramid')
+pyramidLabel.pack()
+
+pyramidEntry = ttk.Entry(F11,textvariable=pyramidBase,font=FONT)
+pyramidEntry.pack()
+
+pyramidEntryH = ttk.Entry(F11,textvariable=pyramidHight,font=FONT)
+pyramidEntryH.pack()
+
+pyramidEntryS = ttk.Entry(F11,textvariable=pyramidSide,font=FONT)
+pyramidEntryS.pack()
+
+pyramidButton = ttk.Button(F11,text='Calculate',command=CP)
+pyramidButton.pack()
+
+pyramidLabel1 = ttk.Label(F11,textvariable=pyramidShowResalut,font=FONT)
+pyramidLabel1.pack()
+###############################################
+GUI.mainloop() #Last update 8/16/2020-6:46 PM
