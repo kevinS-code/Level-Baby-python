@@ -80,6 +80,12 @@ def CP():
 	PS = float(pyramidSide.get())
 	Ans = 1/3*PB*PH*PS**2
 	pyramidShowResalut.set(f'Answer is: {Ans:,.2f}')
+#################################################
+def CR():
+	R = float(RingRadiusS.get())
+	r = float(RingRadiusB.get())
+	Ans = 3.14*(R**2-r**2)
+	RingShowResalut.set(f'Answer is: {Ans:,.2f}')
 #######################New File####################################
 def New1File():
 	GUI2 = Tk()
@@ -124,6 +130,7 @@ F8 = Frame(Tab)
 F9 = Frame(Tab)
 F10 = Frame(Tab)
 F11 = Frame(Tab)
+F12 = Frame(Tab)
 
 Tab.add(F1,text='พื้นฐานคำนวณ')
 Tab.add(F2,text='วงกลม')
@@ -136,6 +143,7 @@ Tab.add(F8,text='ทรงกลม')
 Tab.add(F9,text='ทรงกระบอก')
 Tab.add(F10,text='ทรงกรวย')
 Tab.add(F11,text='พีระมิด')
+Tab.add(F12,text='วงแหวน')
 
 menubar = Menu(GUI)
 GUI.config(menu=menubar)
@@ -341,7 +349,6 @@ ConicalButton.pack()
 
 ConicalLabel1 = ttk.Label(F10,textvariable=ConicalShowResalut,font=FONT)
 ConicalLabel1.pack()
-###############################################
 ###################F11##########################
 pyramidBase = StringVar()
 pyramidHight = StringVar()
@@ -366,5 +373,25 @@ pyramidButton.pack()
 
 pyramidLabel1 = ttk.Label(F11,textvariable=pyramidShowResalut,font=FONT)
 pyramidLabel1.pack()
+####################F12#########################
+RingRadiusS = StringVar()
+RingRadiusB = StringVar()
+RingShowResalut = StringVar()
+RingShowResalut.set('----------')
+########################
+RingLabel = ttk.Label(F12,text='Calculate of Ring')
+RingLabel.pack()
+
+RingEntry = ttk.Entry(F12,textvariable=RingRadiusS,font=FONT)
+RingEntry.pack()
+
+RingEntryH = ttk.Entry(F12,textvariable=RingRadiusB,font=FONT)
+RingEntryH.pack()
+
+RingButton = ttk.Button(F12,text='Calculate',command=CR)
+RingButton.pack()
+
+RingLabel1 = ttk.Label(F12,textvariable=RingShowResalut,font=FONT)
+RingLabel1.pack()
 ###############################################
-GUI.mainloop() #Last update 8/16/2020-6:46 PM
+GUI.mainloop() #Last update 8/18/2020-7:48 PM
