@@ -71,7 +71,7 @@ def CCY():
 def CCO():
 	COR = float(ConicalRadius.get())
 	COH = float(ConicalHight.get())
-	Ans = 1/3*3.14*COR**2*COH
+	Ans = 1/3*3.142*COR**2*COH
 	ConicalShowResalut.set(f'Answer is: {Ans:,.2f}')
 #################################################
 def CP():
@@ -84,8 +84,13 @@ def CP():
 def CR():
 	R = float(RingRadiusS.get())
 	r = float(RingRadiusB.get())
-	Ans = 3.14*(R**2-r**2)
+	Ans = 3.142*(R**2-r**2)
 	RingShowResalut.set(f'Answer is: {Ans:,.2f}')
+#################################################
+def CHS():
+	r = float(HalfsphereRadius.get())
+	Ans = 2*3.142*r**3
+	HalfsphereShowResalut.set(f'Answer is: {Ans:,.2f}')
 #######################New File####################################
 def New1File():
 	GUI2 = Tk()
@@ -131,6 +136,7 @@ F9 = Frame(Tab)
 F10 = Frame(Tab)
 F11 = Frame(Tab)
 F12 = Frame(Tab)
+F13 = Frame(Tab)
 
 Tab.add(F1,text='พื้นฐานคำนวณ')
 Tab.add(F2,text='วงกลม')
@@ -144,6 +150,7 @@ Tab.add(F9,text='ทรงกระบอก')
 Tab.add(F10,text='ทรงกรวย')
 Tab.add(F11,text='พีระมิด')
 Tab.add(F12,text='วงแหวน')
+Tab.add(F13,text='ครึ่งวงกลม')
 
 menubar = Menu(GUI)
 GUI.config(menu=menubar)
@@ -394,4 +401,20 @@ RingButton.pack()
 RingLabel1 = ttk.Label(F12,textvariable=RingShowResalut,font=FONT)
 RingLabel1.pack()
 ###############################################
-GUI.mainloop() #Last update 8/18/2020-7:48 PM
+HalfsphereRadius = StringVar()
+HalfsphereShowResalut = StringVar() 
+HalfsphereShowResalut.set('----------')
+########################
+HalfsphereLabel = ttk.Label(F13,text='Calculate of Half sphere')
+HalfsphereLabel.pack()
+
+HalfsphereEntry = ttk.Entry(F13,textvariable=HalfsphereRadius,font=FONT)
+HalfsphereEntry.pack()
+
+HalfsphereButton = ttk.Button(F13,text='Calculate',command=CHS)
+HalfsphereButton.pack()
+
+HalfsphereLabel1 = ttk.Label(F13,textvariable=HalfsphereShowResalut,font=FONT)
+HalfsphereLabel1.pack()
+###############################################
+GUI.mainloop() #Last update 8/20/2020-7:56 PM
