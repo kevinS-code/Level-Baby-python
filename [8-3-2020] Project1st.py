@@ -91,6 +91,11 @@ def CHS():
 	r = float(HalfsphereRadius.get())
 	Ans = 2*3.142*r**3
 	HalfsphereShowResalut.set(f'Answer is: {Ans:,.2f}')
+#################################################
+def CH():
+	S = float(HexagonSide.get())
+	Ans = 6*0.433*S**2
+	HexagonShowResalut.set(f'Answer is: {Ans:,.2f}')
 #######################New File####################################
 def New1File():
 	GUI2 = Tk()
@@ -137,6 +142,7 @@ F10 = Frame(Tab)
 F11 = Frame(Tab)
 F12 = Frame(Tab)
 F13 = Frame(Tab)
+F14 = Frame(Tab)
 
 Tab.add(F1,text='พื้นฐานคำนวณ')
 Tab.add(F2,text='วงกลม')
@@ -151,6 +157,7 @@ Tab.add(F10,text='ทรงกรวย')
 Tab.add(F11,text='พีระมิด')
 Tab.add(F12,text='วงแหวน')
 Tab.add(F13,text='ครึ่งวงกลม')
+Tab.add(F14text='หกเหลี่ยม')
 
 menubar = Menu(GUI)
 GUI.config(menu=menubar)
@@ -417,4 +424,20 @@ HalfsphereButton.pack()
 HalfsphereLabel1 = ttk.Label(F13,textvariable=HalfsphereShowResalut,font=FONT)
 HalfsphereLabel1.pack()
 ###############################################
-GUI.mainloop() #Last update 8/20/2020-7:56 PM
+HexagonSide = StringVar()
+HexagonShowResalut = StringVar() 
+HexagonShowResalut.set('----------')
+########################
+HexagonLabel = ttk.Label(F14,text='Calculate of Hexagon')
+HexagonLabel.pack()
+
+HexagonEntry = ttk.Entry(F14,textvariable=HexagonSide,font=FONT)
+HexagonEntry.pack()
+
+HexagonButton = ttk.Button(F14,text='Calculate',command=CH)
+HexagonButton.pack()
+
+HexagonLabel1 = ttk.Label(F14,textvariable=HexagonShowResalut,font=FONT)
+HexagonLabel1.pack()
+###############################################
+GUI.mainloop() #Last update 8/22/2020-11:05 PM
