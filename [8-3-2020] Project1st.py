@@ -157,7 +157,7 @@ Tab.add(F10,text='ทรงกรวย')
 Tab.add(F11,text='พีระมิด')
 Tab.add(F12,text='วงแหวน')
 Tab.add(F13,text='ครึ่งวงกลม')
-Tab.add(F14text='หกเหลี่ยม')
+Tab.add(F14,text='หกเหลี่ยม')
 
 menubar = Menu(GUI)
 GUI.config(menu=menubar)
