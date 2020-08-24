@@ -96,6 +96,11 @@ def CH():
 	S = float(HexagonSide.get())
 	Ans = 6*0.433*S**2
 	HexagonShowResalut.set(f'Answer is: {Ans:,.2f}')
+#################################################
+def CSSA():
+	r = float(SphericalRadius.get())
+	Ans = 4*3.142*r**2
+	SphericalShowResalut.set(f'Answer is: {Ans:,.2f}')
 #######################New File####################################
 def New1File():
 	GUI2 = Tk()
@@ -143,6 +148,7 @@ F11 = Frame(Tab)
 F12 = Frame(Tab)
 F13 = Frame(Tab)
 F14 = Frame(Tab)
+F15 = Frame(Tab)
 
 Tab.add(F1,text='พื้นฐานคำนวณ')
 Tab.add(F2,text='วงกลม')
@@ -158,6 +164,7 @@ Tab.add(F11,text='พีระมิด')
 Tab.add(F12,text='วงแหวน')
 Tab.add(F13,text='ครึ่งวงกลม')
 Tab.add(F14,text='หกเหลี่ยม')
+Tab.add(F15,text='พท.วงกลม')
 
 menubar = Menu(GUI)
 GUI.config(menu=menubar)
@@ -440,4 +447,20 @@ HexagonButton.pack()
 HexagonLabel1 = ttk.Label(F14,textvariable=HexagonShowResalut,font=FONT)
 HexagonLabel1.pack()
 ###############################################
-GUI.mainloop() #Last update 8/22/2020-11:05 PM
+SphericalRadius = StringVar()
+SphericalShowResalut = StringVar() 
+SphericalShowResalut.set('----------')
+########################
+SphericalLabel = ttk.Label(F15,text='Calculate of Spherical')
+SphericalLabel.pack()
+
+SphericalEntry = ttk.Entry(F15,textvariable=SphericalRadius,font=FONT)
+SphericalEntry.pack()
+
+SphericalButton = ttk.Button(F15,text='Calculate',command=CSSA)
+SphericalButton.pack()
+
+SphericalLabel1 = ttk.Label(F15,textvariable=SphericalShowResalut,font=FONT)
+SphericalLabel1.pack()
+###############################################
+GUI.mainloop() #Last update 8/24/2020-10:03 PM
