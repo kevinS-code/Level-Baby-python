@@ -101,6 +101,12 @@ def CSSA():
 	r = float(SphericalRadius.get())
 	Ans = 4*3.142*r**2
 	SphericalShowResalut.set(f'Answer is: {Ans:,.2f}')
+#################################################
+def M():
+	M = float(M1.get())
+	m = float(M2.get())
+	Ans = M*m
+	MShowResalut.set(f'Answer is: {Ans:,.2f}')
 #######################New File####################################
 def New1File():
 	GUI2 = Tk()
@@ -149,6 +155,7 @@ F12 = Frame(Tab)
 F13 = Frame(Tab)
 F14 = Frame(Tab)
 F15 = Frame(Tab)
+F16 = Frame(Tab)
 
 Tab.add(F1,text='พื้นฐานคำนวณ')
 Tab.add(F2,text='วงกลม')
@@ -165,6 +172,7 @@ Tab.add(F12,text='วงแหวน')
 Tab.add(F13,text='ครึ่งวงกลม')
 Tab.add(F14,text='หกเหลี่ยม')
 Tab.add(F15,text='พท.วงกลม')
+Tab.add(F16,text='คูณ')
 
 menubar = Menu(GUI)
 GUI.config(menu=menubar)
@@ -463,4 +471,24 @@ SphericalButton.pack()
 SphericalLabel1 = ttk.Label(F15,textvariable=SphericalShowResalut,font=FONT)
 SphericalLabel1.pack()
 ###############################################
-GUI.mainloop() #Last update 8/24/2020-10:03 PM
+M1 = StringVar()
+M2 = StringVar()
+MShowResalut = StringVar()
+MShowResalut.set('----------')
+########################
+MLabel = ttk.Label(F16,text='Multiplication')
+MLabel.pack()
+
+MEntry = ttk.Entry(F16,textvariable=M1,font=FONT)
+MEntry.pack()
+
+MEntryH = ttk.Entry(F16,textvariable=M2,font=FONT)
+MEntryH.pack()
+
+MButton = ttk.Button(F16,text='Calculate',command=M)
+MButton.pack()
+
+MLabel1 = ttk.Label(F16,textvariable=MShowResalut,font=FONT)
+MLabel1.pack()
+###############################################
+GUI.mainloop() #Last update 8/27/2020-2:21 PM
