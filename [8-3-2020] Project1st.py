@@ -107,6 +107,12 @@ def M():
 	m = float(M2.get())
 	Ans = M*m
 	MShowResalut.set(f'Answer is: {Ans:,.2f}')
+#################################################
+def D():
+	D = float(D1.get())
+	d = float(D2.get())
+	Ans = D/d
+	DShowResalut.set(f'Answer is: {Ans:,.2f}')
 #######################New File####################################
 def New1File():
 	GUI2 = Tk()
@@ -156,6 +162,7 @@ F13 = Frame(Tab)
 F14 = Frame(Tab)
 F15 = Frame(Tab)
 F16 = Frame(Tab)
+F17 = Frame(Tab)
 
 Tab.add(F1,text='พื้นฐานคำนวณ')
 Tab.add(F2,text='วงกลม')
@@ -173,6 +180,7 @@ Tab.add(F13,text='ครึ่งวงกลม')
 Tab.add(F14,text='หกเหลี่ยม')
 Tab.add(F15,text='พท.วงกลม')
 Tab.add(F16,text='คูณ')
+Tab.add(F17,text='หาร')
 
 menubar = Menu(GUI)
 GUI.config(menu=menubar)
@@ -491,4 +499,24 @@ MButton.pack()
 MLabel1 = ttk.Label(F16,textvariable=MShowResalut,font=FONT)
 MLabel1.pack()
 ###############################################
-GUI.mainloop() #Last update 8/27/2020-2:21 PM
+D1 = StringVar()
+D2 = StringVar()
+DShowResalut = StringVar()
+DShowResalut.set('----------')
+########################
+DLabel = ttk.Label(F17,text='Divide')
+DLabel.pack()
+
+DEntry = ttk.Entry(F17,textvariable=D1,font=FONT)
+DEntry.pack()
+
+DEntryH = ttk.Entry(F17,textvariable=D2,font=FONT)
+DEntryH.pack()
+
+DButton = ttk.Button(F17,text='Calculate',command=D)
+DButton.pack()
+
+DLabel1 = ttk.Label(F17,textvariable=DShowResalut,font=FONT)
+DLabel1.pack()
+###############################################
+GUI.mainloop() #Last update 8/28/2020-9:36 PM
