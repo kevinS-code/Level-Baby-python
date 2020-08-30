@@ -113,6 +113,12 @@ def D():
 	d = float(D2.get())
 	Ans = D/d
 	DShowResalut.set(f'Answer is: {Ans:,.2f}')
+#################################################
+def Mi():
+	Mi = float(Mi1.get())
+	mi = float(Mi2.get())
+	Ans = Mi-mi
+	MiShowResalut.set(f'Answer is: {Ans:,.2f}')
 #######################New File####################################
 def New1File():
 	GUI2 = Tk()
@@ -163,6 +169,7 @@ F14 = Frame(Tab)
 F15 = Frame(Tab)
 F16 = Frame(Tab)
 F17 = Frame(Tab)
+F18 = Frame(Tab)
 
 Tab.add(F1,text='พื้นฐานคำนวณ')
 Tab.add(F2,text='วงกลม')
@@ -181,6 +188,7 @@ Tab.add(F14,text='หกเหลี่ยม')
 Tab.add(F15,text='พท.วงกลม')
 Tab.add(F16,text='คูณ')
 Tab.add(F17,text='หาร')
+Tab.add(F18,text='ลบ')
 
 menubar = Menu(GUI)
 GUI.config(menu=menubar)
@@ -519,4 +527,24 @@ DButton.pack()
 DLabel1 = ttk.Label(F17,textvariable=DShowResalut,font=FONT)
 DLabel1.pack()
 ###############################################
-GUI.mainloop() #Last update 8/28/2020-9:36 PM
+Mi1 = StringVar()
+Mi2 = StringVar()
+MiShowResalut = StringVar()
+MiShowResalut.set('----------')
+########################
+MiLabel = ttk.Label(F18,text='Minus')
+MiLabel.pack()
+
+MiEntry = ttk.Entry(F18,textvariable=Mi1,font=FONT)
+MiEntry.pack()
+
+MiEntryH = ttk.Entry(F18,textvariable=Mi2,font=FONT)
+MiEntryH.pack()
+
+MiButton = ttk.Button(F18,text='Calculate',command=Mi)
+MiButton.pack()
+
+MiLabel1 = ttk.Label(F18,textvariable=MiShowResalut,font=FONT)
+MiLabel1.pack()
+###############################################
+GUI.mainloop() #Last update 8/30/2020-6:54 PM
